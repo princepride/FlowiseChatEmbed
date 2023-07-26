@@ -93,7 +93,7 @@ export const TextInput = (props: Props) => {
         <LanguageSelector defaultLanguage="Chinese" onLanguageChange={handleLanguageChange} />
             
         <ShortTextInput
-            ref={inputRef as HTMLInputElement}
+            ref={inputRef as HTMLTextAreaElement}
             id = "short-text-input"
             onInput={handleInput}
             value={props.userInput}
