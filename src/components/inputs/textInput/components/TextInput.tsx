@@ -26,9 +26,9 @@ export const TextInput = (props: Props) => {
     // const [inputValue, setInputValue] = createSignal(props.defaultValue ?? '')
     let inputRef: HTMLInputElement | HTMLTextAreaElement | undefined
 
-    const handleInput = (inputValue: string) => props.setUserInput(inputValue)
+    const handleInput = (inputValue: string) => {props.setUserInput(inputValue)}
 
-    const checkIfInputIsValid = () => props.userInput !== '' && inputRef?.reportValidity()
+    const checkIfInputIsValid = () => props.userInput !== ''
 
     const submit = () => {
         if (checkIfInputIsValid()) props.onSubmit(props.userInput || '')
@@ -93,6 +93,7 @@ export const TextInput = (props: Props) => {
         <LanguageSelector defaultLanguage="Chinese" onLanguageChange={handleLanguageChange} />
             
         <ShortTextInput
+            // ref={inputRef as HTMLInputElement}
             ref={inputRef as HTMLTextAreaElement}
             id = "short-text-input"
             onInput={handleInput}
